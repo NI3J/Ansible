@@ -1,0 +1,50 @@
+Install Ansible in Linux
+step1:
+intall epel(extra package enterprize linux repository)
+server# yum install epel
+
+step 2:
+Install Ansible
+server# yum install ansible
+
+step 3:
+password less login
+
+server# ssh-keygen -t rsa
+
+above key stored in .ssh folder
+
+server# cd .ssh
+step no 3:
+copy public key to the client note
+server@ssh# ssh-copy-id root@(client ip address)
+root is the username 
+
+step no 4:
+after copying public key to the client
+then check the password less login
+
+server# ssh root@(clent ip address)
+
+step no 5:
+edit ansible hosts file
+
+server# vi /etc/ansible/hosts
+
+[Demo]
+10.0.0.66
+
+wq! 
+
+step no 6:
+
+server# ansible -m ping Demo
+10.0.0.66 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    }, 
+    "changed": false, 
+    "ping": "pong"
+}
+:wq!
+

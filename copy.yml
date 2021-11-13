@@ -1,0 +1,11 @@
+- hosts: Demo 
+  tasks:
+   - name: Going to create demo.txt file
+     file:
+        path: /tmp/demo.txt
+        state: touch
+        mode: 0777
+   - name: Copy demo.txt file into tmp directory
+     copy:
+        src: /tmp/demo.txt
+        dest: /tmp/example.txt 

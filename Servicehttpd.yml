@@ -1,0 +1,13 @@
+- name: To start and enable an httpd webserver
+  hosts: Demo 
+  tasks
+     - name: start httpd
+    service:
+      name: httpd 
+      state: started
+
+
+  - name: enable httpd
+    service:
+      name: httpd 
+      enabled: yes

@@ -1,0 +1,8 @@
+- name: Create a User
+  hosts: Demo
+  tasks:
+    - name: Add user "Deploy-user"
+      user:
+        name=deploy-user groups=deploy password="NJNJ90" shell=/bin/bash
+        append=yes
+        state=present

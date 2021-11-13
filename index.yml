@@ -1,0 +1,16 @@
+- name: creating a file
+  hosts: Demo
+  tasks:
+  - name: create a file index.html
+    file:
+      path: "/var/www/htmlindex.html"
+      state: touch
+      
+  - name: adding contents to indexfile
+  blockinfile:
+    dest: /var/www.html/index.html
+    block:
+      <html>
+      <h1> Welcome to Ansible </h1>
+      </html>
+      

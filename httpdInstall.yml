@@ -1,0 +1,7 @@
+- name: To install an httpd webserver
+  hosts: Demo
+  tasks:
+  - name: Install httpd packages
+    yum:
+      name: httpd
+      state: present

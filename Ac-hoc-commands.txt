@@ -1,0 +1,26 @@
+Ad-Hoc commands in ansible
+server # ansible -m command -a 'hostnamectl' Demo
+--> above command shows the hostnmae
+computer name,chassis Machine ID,Boot ID Virtualization,os,kernel architecture
+
+server # ansible -m command -a 'df -h' Demo
+--> above command shows the client pc filesystem,Size,Used,Avail,Use% Mounted on
+
+server # ansible -m command -a 'uptime' Demo
+
+--> above command shows the client pc uptime users,load average
+server # ansible Demo -m shell -a set
+
+--> above command print all system-defined variables in client machine
+server # ansible Demo -a "/sbin/reboot"
+
+--> above command reboot the client machine
+
+server # ansible Demo -m copy -a "content='Hello,My name is Nitin' dest=/home/PJ/first.txt"
+
+--> above command copy Hello , My name is Nitin into destination /home/PJ/first.txt filesystem
+
+server # ansible Demo -m copy -a "src=/home/NJ/comment.sh dest=/home/PJ"
+
+--> above command copy comment.sh file from ansible server into destination note on /home/PJ location
+
